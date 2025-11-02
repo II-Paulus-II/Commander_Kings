@@ -19,34 +19,36 @@ commander_ruler_events.1 = {
 			}
 			save_scope_as = commander_ruler
 		}
-		ordered_legion_unit = {
-			limit = { legion = ROOT.capital_scope.governorship.legion }
-			max = 3
-			check_range_bounds = no
-			order_by = unit_size
-			if = {
-				limit = {
-					NOT = {
-						exists = scope:army_one
+		random_legion = {
+			ordered_legion_unit = {
+				limit = { legion = ROOT.capital_scope.governorship.legion }
+				max = 3
+				check_range_bounds = no
+				order_by = unit_size
+				if = {
+					limit = {
+						NOT = {
+							exists = scope:army_one
+						}
 					}
+					save_scope_as = army_one
 				}
-				save_scope_as = army_one
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = scope:army_two
+				else_if = {
+					limit = {
+						NOT = {
+							exists = scope:army_two
+						}
 					}
+					save_scope_as = army_two
 				}
-				save_scope_as = army_two
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = scope:army_three
+				else_if = {
+					limit = {
+						NOT = {
+							exists = scope:army_three
+						}
 					}
+					save_scope_as = army_three
 				}
-				save_scope_as = army_three
 			}
 		}
 	}
