@@ -19,163 +19,153 @@ commander_ruler_events.1 = {
 			}
 			save_scope_as = commander_ruler
 		}
-    ordered_legion = {
-      limit = {
-        any_legion_unit = {
-          unit_size >= 1
-        }
-      }
-      save_scope_as = my_capital_legion
-      ordered_legion_unit = {
-        limit = {
-          legion = ROOT.capital_scope.governorship.legion
-        }
-        max = 3
-        check_range_bounds = no
-        order_by = unit_size
-        if = {
-          limit = {
-            NOT = {
-              exists = scope:army_one
-            }
-          }
-          save_scope_as = army_one
-        }
-        else_if = {
-          limit = {
-            NOT = {
-              exists = scope:army_two
-            }
-          }
-          save_scope_as = army_two
-        }
-        else_if = {
-          limit = {
-            NOT = {
-              exists = scope:army_three
-            }
-          }
-          save_scope_as = army_three
-        }
-      }
-    }
+		ordered_legion_unit = {
+			limit = { legion = ROOT.capital_scope.governorship.legion }
+			max = 3
+			check_range_bounds = no
+			order_by = unit_size
+			if = {
+				limit = {
+					NOT = {
+						exists = scope:army_one
+					}
+				}
+				save_scope_as = army_one
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = scope:army_two
+					}
+				}
+				save_scope_as = army_two
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = scope:army_three
+					}
+				}
+				save_scope_as = army_three
+			}
+		}
 	}
-  option = { #changed my mind
-    name = "commander_ruler_events.1.a"
-    trigger = {
-      exists = scope:army_one
-    }
-  }
+	option = { #changed my mind
+		name = "commander_ruler_events.1.a"
+		trigger = {
+			exists = scope:army_one
+		}
+	}
 	option = { # Ruler Becomes a Commander.
 		name = "commander_ruler_events.1.b"
 		trigger = {
 			exists = scope:army_one
 		}
-    set_variable = {
-      name = ruler_become_commander
-      days = 365
-    } 
-    scope:commander_ruler = {
-      add_character_modifier = {
-        name = ruler_is_a_commander
-        duration = 365
-      }
-      if = {
-        limit = {
-          NOT = {
-            has_variable = ruler_legion_commander
-          }
-        }
-        set_variable = {
-          name = ruler_legion_commander
-          value = ROOT
-        }
-      }
-    }
-    scope:army_one = {
-      add_unit_modifier = {
-        name = ruler_in_command
-        duration = 365
-      }
-      set_as_commander = scope:commander_ruler
-    }
+		set_variable = {
+			name = ruler_become_commander
+			days = 1825
+		}
+		scope:commander_ruler = {
+			add_character_modifier = {
+				name = ruler_is_a_commander
+				duration = 1825
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_variable = ruler_legion_commander
+					}
+				}
+				set_variable = {
+					name = ruler_legion_commander
+					value = ROOT
+				}
+			}
+		}
+		scope:army_one = {
+			add_unit_modifier = {
+				name = ruler_in_command
+				duration = 1825
+			}
+			set_as_commander = scope:commander_ruler
+		}
 	}
 	option = { # Ruler Becomes a Commander.
 		name = "commander_ruler_events.1.c"
 		trigger = {
 			exists = scope:army_two
 		}
-    set_variable = {
-      name = ruler_become_commander
-      days = 365
-    }
-    scope:commander_ruler = {
-      add_character_modifier = {
-        name = ruler_is_a_commander
-        duration = 365
-      }
-      if = {
-        limit = {
-          NOT = {
-            has_variable = ruler_legion_commander
-          }
-        }
-        set_variable = {
-          name = ruler_legion_commander
-          value = ROOT
-        }
-      }
-    }
-    scope:army_two = {
-      add_unit_modifier = {
-        name = ruler_in_command
-        duration = 365
-      }
-      set_as_commander = scope:commander_ruler
-    }
+		set_variable = {
+			name = ruler_become_commander
+			days = 1825
+		}
+		scope:commander_ruler = {
+			add_character_modifier = {
+				name = ruler_is_a_commander
+				duration = 1825
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_variable = ruler_legion_commander
+					}
+				}
+				set_variable = {
+					name = ruler_legion_commander
+					value = ROOT
+				}
+			}
+		}
+		scope:army_two = {
+			add_unit_modifier = {
+				name = ruler_in_command
+				duration = 1825
+			}
+			set_as_commander = scope:commander_ruler
+		}
 	}
 	option = { # Ruler Becomes a Commander.
 		name = "commander_ruler_events.1.d"
 		trigger = {
 			exists = scope:army_three
 		}
-    set_variable = {
-      name = ruler_become_commander
-      days = 365
-    }
-    scope:commander_ruler = {
-      add_character_modifier = {
-        name = ruler_is_a_commander
-        duration = 365
-      }
-      if = {
-        limit = {
-          NOT = {
-            has_variable = ruler_legion_commander
-          }
-        }
-        set_variable = {
-          name = ruler_legion_commander
-          value = ROOT
-        }
-      }
-    }
-    scope:army_three = {
-      add_unit_modifier = {
-        name = ruler_in_command
-        duration = 365
-      }
-      set_as_commander = scope:commander_ruler
-    }
+		set_variable = {
+			name = ruler_become_commander
+			days = 1825
+		}
+		scope:commander_ruler = {
+			add_character_modifier = {
+				name = ruler_is_a_commander
+				duration = 1825
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_variable = ruler_legion_commander
+					}
+				}
+				set_variable = {
+					name = ruler_legion_commander
+					value = ROOT
+				}
+			}
+		}
+		scope:army_three = {
+			add_unit_modifier = {
+				name = ruler_in_command
+				duration = 1825
+			}
+			set_as_commander = scope:commander_ruler
+		}
 	}
-  option = {
-    name = "commander_ruler_events_1.e"
-    trigger = {
-      NOT = {
-        exists = scope:army_one
-      }
-    }
-  }
+	option = {
+		name = "commander_ruler_events_1.e"
+		trigger = {
+			NOT = {
+				exists = scope:army_one
+			}
+		}
+	}
 }
 
 commander_ruler_events.2 = {
@@ -185,60 +175,60 @@ commander_ruler_events.2 = {
 	picture = elephant_battle
 
 	left_portrait = scope:commander_ruler
-  
-  immediate = {
-    random_character = {
-      limit = {
-        is_ruler = yes
-        has_character_modifier = ruler_is_a_commander
-      }
-      save_scope_as = commander_ruler
-    }
-  }
 
-  option = { #changed my mind
-    name = "commander_ruler_events.2.a"
-  }
+	immediate = {
+		random_character = {
+			limit = {
+				is_ruler = yes
+				has_character_modifier = ruler_is_a_commander
+			}
+			save_scope_as = commander_ruler
+		}
+	}
+
+	option = { #changed my mind
+		name = "commander_ruler_events.2.a"
+	}
 	option = { # Ruler Stops Being a Commander.
 		name = "commander_ruler_events.2.b"
 		trigger = {
 			exists = scope:commander_ruler
 		}
-    scope:commander_ruler = { 
-        remove_character_modifier = ruler_is_a_commander
-        remove_command = yes
-        remove_variable = ruler_legion_commander
+		scope:commander_ruler = {
+				remove_character_modifier = ruler_is_a_commander
+				remove_command = yes
+				remove_variable = ruler_legion_commander
 			}
 		hidden_effect = {
 			remove_variable = ruler_become_commander
 			random_unit = {
-				limit = { 
-          has_unit_modifier = ruler_in_command
-        }
+				limit = {
+					has_unit_modifier = ruler_in_command
+				}
 				remove_unit_modifier = ruler_in_command
 			}
-    }
+		}
 	}
 }
 
 commander_ruler_events.3 = {
-  type = country_event
-  hidden = yes
+	type = country_event
+	hidden = yes
 
-  immediate = {
-    if = {
-      limit = {
-        has_variable = ruler_become_commander
-      }
-      remove_variable = ruler_become_commander
-    }
-    random_unit = {
-      limit = { 
-        has_unit_modifier = ruler_in_command
-      }
-      remove_unit_modifier = ruler_in_command
-    }
-  }
+	immediate = {
+		if = {
+			limit = {
+				has_variable = ruler_become_commander
+			}
+			remove_variable = ruler_become_commander
+		}
+		random_unit = {
+			limit = {
+				has_unit_modifier = ruler_in_command
+			}
+			remove_unit_modifier = ruler_in_command
+		}
+	}
 }
 
 commander_ruler_events.4 = {
@@ -256,79 +246,79 @@ commander_ruler_events.4 = {
 			}
 			save_scope_as = regency_consort
 		}
-    set_as_ruler = scope:regency_consort
-  }
+		set_as_ruler = scope:regency_consort
+	}
 	option = { # Consort Becomes Ruler
 		name = "commander_ruler_events.4.a"
-  }
+	}
 }
 
 commander_ruler_events.5 = {
-  type = country_event
+	type = country_event
 	title = "commander_ruler_events.5.t"
 	desc = "commander_ruler_events.5.desc"
 	picture = throneroom
 
-  immediate = {
-    hidden_effect = {
-      if = {
-        limit = {
-          has_variable = ruler_become_commander
-        }
-        remove_variable = ruler_become_commander
-      }
-    }
-    random_character = {
-      limit = {
-        in_command = yes
-        has_variable = ruler_legion_commander
-        is_ruler = no
-      }
-      save_scope_as = old_ruler
-    }
-    if = {
-      limit = { 
-        exists = scope:old_ruler
-      }
-      scope:old_ruler = {
-        remove_command = yes
-        remove_variable = ruler_legion_commander
-        if = {
-          limit = {
-            has_character_modifier = ruler_is_a_commander
-          }
-          remove_character_modifier = ruler_is_a_commander
-        }
-      }
-    }
-    random_unit = {
-      limit = { 
-        has_unit_modifier = ruler_in_command
-      }
-      remove_unit_modifier = ruler_in_command
-    }
-  }
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_variable = ruler_become_commander
+				}
+				remove_variable = ruler_become_commander
+			}
+		}
+		random_character = {
+			limit = {
+				in_command = yes
+				has_variable = ruler_legion_commander
+				is_ruler = no
+			}
+			save_scope_as = old_ruler
+		}
+		if = {
+			limit = {
+				exists = scope:old_ruler
+			}
+			scope:old_ruler = {
+				remove_command = yes
+				remove_variable = ruler_legion_commander
+				if = {
+					limit = {
+						has_character_modifier = ruler_is_a_commander
+					}
+					remove_character_modifier = ruler_is_a_commander
+				}
+			}
+		}
+		random_unit = {
+			limit = {
+				has_unit_modifier = ruler_in_command
+			}
+			remove_unit_modifier = ruler_in_command
+		}
+	}
 	option = {
 		name = "commander_ruler_events.5.a"
-  }
+	}
 }
 
 commander_ruler_events.6 = {
 	type = character_event
 	hidden = yes
-	
+
 	immediate = {
 		if = {
 			limit = {
 				has_variable = ruler_legion_commander
 			}
-      remove_variable = ruler_legion_commander
-      employer = {
-        trigger_event = {
-          id = commander_ruler_events.3
-          days = 1
+			remove_variable = ruler_legion_commander
+			employer = {
+				trigger_event = {
+					id = commander_ruler_events.3
+					days = 1
 			}
-    }
+		}
 		}
 	}
 
