@@ -4,6 +4,9 @@ Ever wanted your king to command a legion? Well now you can!
 
 If the laws of a nation allow a legion to be created then a decision becomes available to take command of a legion.
 
+[h1][b] Update 15th January 2026 [/b] [/h1]
+Thanks to ... May have fixed some later game bugs with the mod :fingers crossed:
+
 [h1][b] Update 17th March [/b] [/h1]
 
 Consuls can now command legions
